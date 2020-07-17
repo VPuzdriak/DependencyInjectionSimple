@@ -12,20 +12,20 @@ namespace DependencyInjection
 
         public ServiceDescriptorFacade AddSingleton<TService>(TService service)
         {
-            var desciptor = new ServiceDescriptor(service);
+            var descriptor = new ServiceDescriptor(service);
 
-            _descriptors.Add(desciptor);
+            _descriptors.Add(descriptor);
 
-            return new ServiceDescriptorFacade(desciptor);
+            return new ServiceDescriptorFacade(descriptor);
         }
 
         public ServiceDescriptorFacade AddSingleton<TService>()
         {
-            var desciptor = new ServiceDescriptor(typeof(TService));
+            var descriptor = new ServiceDescriptor(typeof(TService), LifeTime.Singleton);
             
-            _descriptors.Add(desciptor);
+            _descriptors.Add(descriptor);
 
-            return new ServiceDescriptorFacade(desciptor);
+            return new ServiceDescriptorFacade(descriptor);
         }
 
         public ServiceDescriptorFacade AddSingleton<TService, TImplementation>()

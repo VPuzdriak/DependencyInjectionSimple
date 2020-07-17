@@ -11,11 +11,6 @@ namespace DependencyInjection.Sample.Services.SomeService
 
         public bool Disposed => _disposed;
 
-        public SomeService()
-        {
-            _guidGenerator = new RandomGuidGenerator();
-        }
-
         public SomeService(IGuidGenerator guidGenerator)
         {
             _guidGenerator = guidGenerator;
